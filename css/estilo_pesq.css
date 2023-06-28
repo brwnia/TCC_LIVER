@@ -1,0 +1,29 @@
+/* Google Fonts - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+body{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: RED;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+  .card {
+    border: 1px solid RED;
+    margin: 1px;
+    padding: 2px;
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+  
+h2{
+    color: aliceblue;
+    text-align: center;
+}
