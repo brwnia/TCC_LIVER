@@ -1,55 +1,232 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-  /*Estilo descrição*/
 
+body{
+  background-color: black; 
+  color: white; 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+	--main-color:rgb(177, 185, 157);
+	--border-color:rgb(56, 68, 77);
+	--shadow-color:rgba(29, 161, 242, 0.1);
+  --twitter-background: #e7de89;
+}
+
+/*Estilo da NAVBAR*/
+
+    .navbar-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      margin-top: 0px; 
+      margin-right: 100px;
+    }
+
+    .search-box{
+      position: absolute;
+      top: 50%;
+      left: 90%;
+      transform: translate(-50%, -50%);
+      background: white;
+      height: 30px;
+      border-radius: 20px;
+      padding: 5px; 
+      }
+      
+      .search-box:hover > .search-txt{
+      width: 110px;
+      padding: 0 6px;
+      top: 50px;
+      }
+      
+      .search-btn{
+      position: absolute;
+      color: black;
+      background: yellow;
+      width:20px;
+      height:20px;
+      border-radius: 50%;
+      display: block;
+      }
+      
+      .search-txt{
+      border: none;
+      background: none;
+      outline:none;
+      float: right;
+      padding: 0;
+      font-size: 14px;
+      transition: 1.2s;
+      width: 20px;
+      margin-left:20px;
+      margin-top: -1px;
+      display: block;
+      }
+
+    .navbar {
+      position: fixed;
+      width: 100%;
+      left: 0;
+      background-color: black; 
+    }
+
+
+  /*ESTILO DESCRIÇÃO*/
+
+  /* Info da obra */
   .container-fluid{
     position: absolute;
-    width: 50%;
-    height: 57%;
-    background-color: rgb(0, 0, 0);
-    padding:50px;
-    border: 2px solid #000000;
-    top: 100px;
-    right: 500px;
-    left: 500px;
     display: flex;
-    text-align:center;
-
+    justify-content: center;
+    top:5px;
 }
 
 .col-md-4{
   white-space:nowrap;
   position:absolute;
-  top:5px;
-  text-align: center; 
-  right:1000px;
-  left: -200px;
+  top:150px;
+  text-align:match-parent; 
   font-size: 30px;
   font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
 }
 
 .col-md-8{
   position: absolute;
-  padding: -20px;
-  top: 60px;
-  right: 10px;
-  text-align:justify;
-  margin:0;
-  font-size: 15px;
-  width: 800px;
+  text-align: justify;
+  top:195px;
+  width: 60vw;
+  left: 450px;
+  
 }
 
 .img-fluid{
   position: absolute;
-  top: 0px;
-  right: 900px;
-  width: 250px; 
-  height: 350px;
-  
+  width: 210px;
+  top: 150px;
+  left:200px;
 }
-.estrela{
-  position:relative;
-  width: 20px; 
-  height: 50px;
-  
 
+  /* Timeline */
+
+#linha-resenha{
+  position: relative;
+  top:435px;
+  width:100%;
+	height:12px;
+	border-bottom:4px solid var(--twitter-background);
+  opacity: 0.3;
 }
+
+.space{
+  position: absolute;
+  width:90%;
+	height:3px;
+	background-color: rgb(25, 39, 52);
+  border: none;
+  top:150px;
+  left:30px;
+}
+
+#container-res{
+  position: absolute;
+  top:555px;
+  margin-left: 30%;
+  max-width: 580px;
+}
+
+#content-res{
+  border:1px solid var(--twitter-background);
+	border-top:none;
+}
+
+#resenha{  
+  text-decoration: none;
+	display:flex;
+  border-bottom:1px solid var(--twitter-background);
+}
+
+#resenha-nome{
+  position: absolute;
+  color:red;
+  left:100px;
+  text-decoration: none;
+  margin: 10px;
+}
+
+#res{
+  position: relative;
+  word-break: break-word;
+  font-size:16px;
+  color: white;
+  padding: 50px;
+  margin: 5px;
+}
+
+  /* Para quando estiver ou não, logado*/
+
+#not-res{
+  position: relative;
+  word-break: break-word;
+  font-size:16px;
+  color: white;
+  padding: 50px;
+  margin: 5px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  left: 30px;
+  font-family: 'Poppins', sans-serif;
+}
+
+#login-res{
+  text-decoration: none;
+  font-size: 27px;
+  color:white;
+  font-family: 'Poppins', sans-serif;
+  padding: 25px;
+  margin: 20px;
+  letter-spacing: 2px; 
+}
+
+#logado-res{
+  text-decoration: none;
+  font-size: 27px;
+  color:white;
+  font-family: 'Poppins', sans-serif;
+  padding: 25px;
+  margin: 20px;
+  letter-spacing: 2px; 
+}
+
+#botao-res{
+ position: relative;
+  font-size:16px;
+	width:40%;
+	height:40px;
+	font-weight:700;
+	border:none;
+	background-color:var(--main-color);
+  opacity:0.5;
+	border-radius:30px;
+	color:white;
+	margin: 0 20px;
+  text-decoration: none;
+  top:100px;
+  cursor: pointer;
+}
+
+#botao-res:hover{
+  color: white;
+  opacity: 1;
+  transition: 1.2s;
+}
+
+
+
+
