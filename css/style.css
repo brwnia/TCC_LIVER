@@ -77,10 +77,12 @@ body{
       background-color: black; 
     }
 
-    /*Estilo das CITAÇÕES*/
+  /*Estilo das CITAÇÕES*/
   main.cards{
     display: flex;
     padding: 32px;
+    gap:30px;
+ 
     }
     
     main.cards section.card{
@@ -89,8 +91,9 @@ body{
         align-items: center;
         box-sizing: content-box;
         padding: 1rem 1.5rem;
-        margin-left: 10px;
-        max-width: 430px;
+   
+         width: 100%;
+         max-width: 500px;
         height: 125px;
         background: linear-gradient(black, black);
         border-radius: 32px;
@@ -147,10 +150,11 @@ body{
     
     main.cards section.card span{
     padding-top: 2%;
-    font-size: 15px;
+    font-size: 14px;
     background: transparent;
     color: white;
     text-align: justify;
+    padding: 5px;
     }
                     
     @media screen and (max-width:800px) 
@@ -159,6 +163,7 @@ body{
     flex-direction: column;
     }    
   }
+
 
   /*Estilo da VITRINE*/
     .slide-container{  
