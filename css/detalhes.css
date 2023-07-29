@@ -154,17 +154,17 @@ body{
 
 #resenha-nome{
   position: absolute;
-  color:red;
+  color:rgb(0, 255, 221);
   left:100px;
   text-decoration: none;
-  margin: 10px;
+  
 }
 
-#res{
+.res{
   position: relative;
   word-break: break-word;
   font-size:16px;
-  color: white;
+  color: rgb(243, 41, 41);
   padding: 50px;
   margin: 5px;
 }
@@ -227,6 +227,9 @@ body{
   transition: 1.2s;
 }
 
+/* PAGINA DE PERFIL*/
 
-
+.info-perfil{
+  color:white;
+}
 

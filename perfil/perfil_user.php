@@ -1,4 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/detalhes.css">
+</head>
+<body>
 <?php
+
 // Conecta-se ao banco de dados
 require '../conexao.php';
 
@@ -25,18 +32,28 @@ if (mysqli_num_rows($resultado) > 0) {
     $bio = $perfil['BIO'];
 
     // Exiba os dados do perfil
-    echo "Nome: $nome<br>";
-    echo "Username: $username<br>";
-    echo "Bio: $bio<br>";
-    echo "Foto de Perfil: <img src='imagens/img_user/fotos_usuario/$fotoPerfil' alt='Foto de Perfil'><br>";
-    echo "Foto de Capa: <img src='imagens/img_user/fotos_capa/$fotoCapa' alt='Foto de Capa'><br>";
+    echo "<section class='first-person'>";
+
+    echo "<div class='fotos-perfil'>";
+    echo "<img src='imagens/img_user/fotos_capa/$fotoCapa' alt='Foto de Capa' id='foto-perfil-capa'><br>";
+    echo "<img src='imagens/img_user/fotos_usuario/$fotoPerfil' alt='Foto de Perfil' id='foto-perfil-user'><br>";
+    echo "</div>";
+
+    echo "<div class='info-perfil'>";
+    echo "$nome<br>";
+    echo "@$username<br>";
+    echo "$bio<br>";
+    
+    
     // Botão Alterar Perfil
+    echo "<div class='config-first-person'>";
     echo "<a href='editar_perfil.php'>Alterar Perfil</a><br>";
     echo "<a href='logout.php'>Sair da Minha Conta</a><br>";
     echo "<a href='../listar_obras_CL.php'>Resenhar</a><br><br><br>";
 } else {
     echo "Perfil não encontrado.";
 }
+    echo"</div>";
 
 // Consulta as pessoas que o usuário segue
 $sqlSeguindo = "SELECT * FROM seguir WHERE perfil_ID_PERFIL = $idUsuario";
@@ -61,10 +78,11 @@ if (mysqli_num_rows($resultadoSeguindo) > 0) {
 } else {
     echo "<h3>Você não está seguindo ninguém.</h3>";
 }
-
-
+    echo "</div>";
+    echo "</section>";
 
 // Mostrar resenhas feitas pelo usuário 
+    echo "<article class='resenhas-first-person'>";
 $sqlR = "SELECT * FROM resenhas WHERE usuarios_ID_USUARIO = $idUsuario ORDER BY DATA_RESENHA DESC";
 $resultadoResenhas = mysqli_query($con, $sqlR);
 
@@ -78,6 +96,7 @@ if (mysqli_num_rows($resultadoResenhas) > 0) {
         $obra = mysqli_fetch_assoc($resultadoObra);
         
         // Exiba as informações da obra
+        echo "<div class='info-resenha'>";
         echo $row['DATA_RESENHA'] . "<br>";
         echo "<img src='../imagens/img_obras/" . $obra['FOTO_OBRA'] . "' alt='Foto da Obra'><br>";
         echo $obra['NOME_OBRA'] . "<br>";
@@ -91,7 +110,11 @@ if (mysqli_num_rows($resultadoResenhas) > 0) {
     echo "<h3>Aparentemente você ainda não tem resenhas. Resenhe uma obra agora!</h3><br>";
     echo "<a href='../listar_obras.php'>Resenhar</a><br>";
 }
-
+    echo "</div>";
+    echo "</article";
 // Fechar a conexão com o banco de dados
 mysqli_close($con);
 ?>
+
+</body>
+</html>

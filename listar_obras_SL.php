@@ -108,7 +108,7 @@ if ($result->num_rows > 0) {
             $nome_usuario = $row_resenha['NOME_PERFIL'];
             $txt_resenha = $row_resenha['TXT_RESENHA'];
             $id_usuario = $row_resenha['usuarios_ID_USUARIO'];
-            echo "<p id='resenha'><a id='resenha-nome' href='perfil.php?id_usuario=$id_usuario'>$nome_usuario<br><br><a id='res'>$txt_resenha</a></a></p>";
+            echo "<p id='resenha' class='res'><a id='resenha-nome' href='perfil.php?id_usuario=$id_usuario'>$nome_usuario</a><br><br>$txt_resenha</p>";
         }
     } else {
         echo "<p id='resenha'><a id='not-res'>Ainda não há resenhas para esta obra.</a></p>";
