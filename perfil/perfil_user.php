@@ -1,9 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" href="css/detalhes.css">
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="icon" href="./public/logo2_liver.png" type="image/x-icon">
+    <title>Meu perfil</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="perfil.css">
+  </head>
+
 <body>
+  <div class="container-fluid">
+    <!--NAVBAR-->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand">
+            <img src="../imagens/liver_logo.png" alt="Logo LiVer" src="index.php" width="100" height="40"></a>
+    </div>
+    </nav>
+    <br><br><br><br>
+<!--NAVBAR TERMINA-->
+
 <?php
 
 // Conecta-se ao banco de dados
@@ -35,15 +55,15 @@ if (mysqli_num_rows($resultado) > 0) {
     echo "<section class='first-person'>";
 
     echo "<div class='fotos-perfil'>";
-    echo "<img src='imagens/img_user/fotos_capa/$fotoCapa' alt='Foto de Capa' id='foto-perfil-capa'><br>";
-    echo "<img src='imagens/img_user/fotos_usuario/$fotoPerfil' alt='Foto de Perfil' id='foto-perfil-user'><br>";
+    echo "<img src='../imagens/img_user/fotos_capa/$fotoCapa' alt='Foto de Capa' id='foto-perfil-capa'><br>";
+    echo "<img src='../imagens/img_user/fotos_user/$fotoPerfil' alt='Foto de Perfil' id='foto-perfil-user'><br>";
     echo "</div>";
 
     echo "<div class='info-perfil'>";
-    echo "$nome<br>";
-    echo "@$username<br>";
-    echo "$bio<br>";
-    
+    echo "$nome<br><br>";
+    echo "@$username<br><br>";
+    echo "$bio<br><br>";
+    echo "</div>";
     
     // Botão Alterar Perfil
     echo "<div class='config-first-person'>";
@@ -56,6 +76,7 @@ if (mysqli_num_rows($resultado) > 0) {
     echo"</div>";
 
 // Consulta as pessoas que o usuário segue
+echo "<div class='seguidores-perfil'>";
 $sqlSeguindo = "SELECT * FROM seguir WHERE perfil_ID_PERFIL = $idUsuario";
 $resultadoSeguindo = mysqli_query($con, $sqlSeguindo);
 
@@ -76,9 +97,9 @@ if (mysqli_num_rows($resultadoSeguindo) > 0) {
         }
     }
 } else {
-    echo "<h3>Você não está seguindo ninguém.</h3>";
+    echo "<h3 id='seguindo'>Você não está seguindo ninguém.</h3>";
 }
-    echo "</div>";
+    echo"</div>";
     echo "</section>";
 
 // Mostrar resenhas feitas pelo usuário 
@@ -107,8 +128,7 @@ if (mysqli_num_rows($resultadoResenhas) > 0) {
 
     }
 } else {
-    echo "<h3>Aparentemente você ainda não tem resenhas. Resenhe uma obra agora!</h3><br>";
-    echo "<a href='../listar_obras.php'>Resenhar</a><br>";
+    echo "<h3 id='resenha'>Aparentemente você ainda não tem resenhas.<br><a href='../listar_obras.php'>Resenhe uma obra agora!</a><br></h3><br>";
 }
     echo "</div>";
     echo "</article";

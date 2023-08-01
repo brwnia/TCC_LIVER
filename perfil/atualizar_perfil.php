@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     if ($fotoPerfil) {
         // Realiza o upload da nova foto de perfil
-        $targetDir = 'imagens/img_user/fotos_usuario/';
+        $targetDir = '../imagens/img_user/fotos_user/';
         $targetFile = $targetDir . basename($_FILES['fotoPerfil']['name']);
         move_uploaded_file($_FILES['fotoPerfil']['tmp_name'], './' . $targetFile);
         
@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     if ($fotoCapa) {
         // Realiza o upload da nova foto de capa
-        $targetDir = 'imagens/img_user/fotos_capa/';
+        $targetDir = '../imagens/img_user/fotos_capa/';
         $targetFile = $targetDir . basename($_FILES['fotoCapa']['name']);
         move_uploaded_file($_FILES['fotoCapa']['tmp_name'], './' . $targetFile);
         

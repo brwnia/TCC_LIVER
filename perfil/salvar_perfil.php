@@ -44,8 +44,8 @@ else {
     }
 
     // Diretório onde as fotos serão armazenadas
-    $diretorioFotoP = 'imagens/img_user/fotos_usuario';
-    $diretorioFotoC = 'imagens/img_user/fotos_capa';
+    $diretorioFotoP = '../imagens/img_user/fotos_usuario';
+    $diretorioFotoC = '../imagens/img_user/fotos_capa';
 
     // Mover foto de perfil
     $fotoPerfil = moverFoto('foto', $diretorioFotoP);
