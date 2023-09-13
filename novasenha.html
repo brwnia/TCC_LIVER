@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="icon" href="./public/logo2_liver.png" type="image/x-icon">
+    <title>Entrar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script> 
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./index.css" />
+    
+  </head>
+  <div class="container-fluid">
+    <!--NAVBAR-->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark w-100">
+    <div class="container">
+        <a href="../index.php" class="navbar-brand">
+            <img src="./public/liver_logo.png" alt="Logo LiVer" src="index.php" width="100" height="40"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse me-auto y-2 my-lg-0" id="navbarScroll">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="../index.php">Início</a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page">Login</a>
+            </li>
+        </ul>
+        </div>
+    </div>
+    </nav>
+    <br><br><br><br>
+<!--FIM DA NAVBAR--> 
+
+<form class="row g-3"  name="focad" action="novasenha.php" method="POST">
+
+
+  <div class="frame-child">
+    <div class="pagelogin">
+   
+    <img class="image-1-icon" alt="" src="./public/image-1@2x.png">
+     <div class="entrar">Redefinir minha senha</div>
+     <br>
+     <label>  
+      <div class="senha">Confirme seu email:</div>
+      
+      <input type="text" class="barracodigo"  name="txtemail" required>
+      <span class="symbol-barraemail">
+
+      <div class="senha">Insira a nova senha:</div>
+      
+      <input type="text" class="barracodigo"  name="txtnova" required>
+      <span class="symbol-barraemail">
+
+      <div class="codigo">Confirme sua nova senha:</div>
+      <input type="text" class="barracodigo"  name="txtnovaconf" required>
+      <span class="symbol-barraemail">
+   
+    <br>
+
+     </label>
+     
+
+</div>
+<br>
+<button class="botao1">Enviar</button>
+
+<br><br>
+
+</html>
+<?php
+
+/*require_once('../PHPMailer/src/PHPMailer.php');
+require_once('../PHPMailer/src/SMTP.php');
+require_once('../PHPMailer/src/Exception.php');
+ 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+include ("esqueciasenha.php");
+include ("../conexao.php");
+
+
+$_SESSION[$novaSenha];
+
+  $codigoform = $_POST ['txtcodigo'];
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if($codigoform == $novaSenha){
+        echo "Digite sua nova senha:";
+  
+    } else {
+        echo "Código invalido. Tente novamente.";
+    }
+}
+
+session_destroy();
+*/
+?>
